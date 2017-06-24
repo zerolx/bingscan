@@ -16,12 +16,12 @@ if len(sys.argv) == 2:
 		soup = BeautifulSoup(r.text, 'html.parser')
 		nc = 0
 		for link in soup.find_all('cite'):
-			print link.get_text()
+			print unicode(link.get_text()).encode("utf-8")
 			nc+=1
 		if nc < 10:
-			goOn = False	
+			goOn = False
 		i += 1
-		
+
 else:
 	print "Usage: bingscan.py DORK"
 	print "URL Extractor"
